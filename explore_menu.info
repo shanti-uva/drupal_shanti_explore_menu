@@ -1,0 +1,9 @@
+name = Shanti Explore Menu 
+description = "Provides a block to place in the top bar that creates the explore dropdown menu"
+core = 7.x
+package = Shanti
+
+files[] = explore_menu.module
+files[] = explore_menu.install
+
+scripts[] = js/explore_menu.js

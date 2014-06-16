@@ -1,0 +1,21 @@
+{
+	"version": "1.0",
+	"name": "Shanti Collections",
+	"language": "und",
+	"links": [
+		{"class": "overview", "text": "Overview", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-overview", "badge": "5"},
+		{"class": "subjects", "text": "Subjects", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-subjects", "badge": "5"},
+		{"class": "essays", "text": "Essays", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-essays", "badge": "1"},
+		{"class": "places", "text": "Places", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-places", "badge": "3"},
+		{"class": "agents", "text": "Agents", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-agents", "badge": "3"},
+		{"class": "events", "text": "Events", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-events", "badge": "3"},
+		{"class": "photos", "text": "Photos", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-photos", "badge": "3"},
+		{"class": "av", "text": "Audio-Video", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-audio-video", "badge": "3"},
+		{"class": "visuals", "text": "Visuals", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-visuals", "badge": "3"},
+		{"class": "texts", "text": "Texts", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-texts", "badge": "3"},
+		{"class": "maps", "text": "Maps", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-maps", "badge": "3"},
+		{"class": "community", "text": "Community", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-community", "badge": "3"},
+		{"class": "terms", "text": "Terms", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-terms", "badge": "3"},
+		{"class": "sources", "text": "Sources", "href": "http://mediabase.drupal-dev.shanti.virginia.edu/#tab-sources", "badge": "3"}
+	]
+}

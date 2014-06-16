@@ -1,0 +1,87 @@
+<?php 
+
+// Define CONSTANTS used by this module: css class and title
+define('EXPLORE_SECTION_CLASS', 'container collapse opencollect collections');
+define('EXPLORE_DIV_CLASS', 'col-sm-12 col-md-10 col-md-offset-1');
+define('EXPLORE_DIV_TITLE', 'EXPLORE COLLECTIONS');
+define('EXPLORE_LINK_TEXT', 'EXPLORE');
+
+/**
+ * Implements hook_block_info().
+ */
+function explore_menu_block_info() {
+  $blocks = array();
+  $blocks['explore_menu_block'] = array(
+    'info' => t('Explore Menu Block'),
+   );
+  return $blocks;
+}
+
+/**
+* Implements hook_block_configure().
+*   Configures classes for section and div element plus the title text for the popup
+*/
+function explore_menu_block_configure($delta='') {
+  $form = array();
+  
+  switch($delta) {
+    case 'explore_menu_block' :
+      // Explore Div Class Attribute Value
+      $form['explore_section_class'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Section Element Class'),
+        '#description' => t('The value for the class attribute of the section element containing the content div'),
+        '#default_value' => variable_get('explore_section_class', EXPLORE_SECTION_CLASS),
+      );
+      
+      // Explore Div Class Attribute Value
+      $form['explore_div_class'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Containing Div Class'),
+        '#description' => t('The value for the class attribute of the div containing the links to the collections'),
+        '#default_value' => variable_get('explore_div_class', EXPLORE_DIV_CLASS),
+      );
+      
+      // Explore Div Title
+      $form['explore_div_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Title'),
+        '#description' => t('Title to display at the top of the collection links'),
+        '#default_value' => variable_get('explore_div_title', EXPLORE_DIV_TITLE),
+      );
+            
+      // Explore Div Link Text
+      $form['explore_link_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Link Text'),
+        '#description' => t('Text for button in top bar'),
+        '#default_value' => variable_get('explore_link_text', EXPLORE_LINK_TEXT),
+      );
+      
+      // Explanation of where data comes from
+      $form['data_explanation'] = array(
+        '#type' => 'markup',
+        '#markup' => '<div><strong>' . t('Note:') . '</strong> <p>' . 
+          t('The links themselves are defined by a JSON file contained with the Shanti Explore Menu module\'s js folder.') . '</p></div>',
+                      
+      );
+      break;
+  }
+  
+  return $form;
+}
+
+/**
+ * Used by theme to get the icon class for a link with a specific title. Means all links must have unique titles. Could use href?
+ */
+function explore_menu_get_iconclass($title) {
+  $datastr = file_get_contents(drupal_get_path('module', 'explore_menu') . '/js/shanti-collections.json');
+  $json = json_decode($datastr);
+  foreach($json->links as $n => $link) {
+    if($link->text == $title) {
+      return $link->class;
+    }
+  }
+  return FALSE;
+}
+
