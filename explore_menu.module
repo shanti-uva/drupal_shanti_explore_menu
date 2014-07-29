@@ -1,7 +1,7 @@
 <?php 
 
 // Define CONSTANTS used by this module: css class and title
-define('EXPLORE_SECTION_CLASS', 'container collapse opencollect collections');
+define('EXPLORE_SECTION_CLASS', 'container opencollect collections');
 define('EXPLORE_DIV_CLASS', 'col-sm-12 col-md-10 col-md-offset-1');
 define('EXPLORE_DIV_TITLE', 'EXPLORE COLLECTIONS');
 define('EXPLORE_LINK_TEXT', 'EXPLORE');
